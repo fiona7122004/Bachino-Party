@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-espresso: #3D3522;
+  --color-terracotta: #B46D5E;
+  --color-sage: #8FA491;
+  --color-sand: #E8DED1;
+  --color-cream: #FAF7F2;
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap');
+
+  body {
+    @apply bg-[var(--color-sand)] text-[var(--color-espresso)] font-sans;
+  }
+
+  h1, h2, h3, h4, .serif {
+    @apply font-serif;
+  }
+}
+
+.scroll-fade {
+  @apply opacity-0 transition-opacity duration-1000;
+}
+
+.scroll-fade.visible {
+  @apply opacity-100;
+}
+
+/* Custom scrollbar to match palette */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[var(--color-cream)];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[var(--color-terracotta)] rounded-full;
+}
